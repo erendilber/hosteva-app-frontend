@@ -1,0 +1,207 @@
+/*TEMEL AYARLAR*/
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/*YAPIŞKAN HEADER*/
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    /* Header yüksekte */
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/*KRİTİK EKLEME: BİLDİRİMLERİ (TOAST) EN ÜSTE ALMAK*/
+.Toastify__toast-container {
+    z-index: 99999 !important;
+    margin-top: 70px;
+}
+
+/*MOBİL UYUMLULUK */
+@media (max-width: 768px) {
+
+    /* 1-HEADER DÜZENİ*/
+    header {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 10px 15px !important;
+        gap: 10px !important;
+    }
+
+    /*Mobilde Bildirim Konumu*/
+    .Toastify__toast-container {
+        margin-top: 0;
+        top: 140px !important;
+    }
+
+    header>div {
+        width: 100% !important;
+        justify-content: center !important;
+        margin: 0 !important;
+    }
+
+    /*Arama kutusu*/
+    header input {
+        width: 100% !important;
+        height: 40px !important;
+    }
+
+    /*SIRALAMA*/
+    header>div:nth-child(2) {
+        order: 1;
+        /*Logo*/
+        width: 100% !important;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    header>div:last-child {
+        order: 2;
+        /*İkonlar*/
+        width: 100% !important;
+        justify-content: center !important;
+        gap: 30px !important;
+        display: flex !important;
+        margin: 0 !important;
+    }
+
+    header>div:first-child {
+        order: 3;
+        /*Arama Kutusu*/
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* 2-ANA DÜZEN*/
+    div:has(aside),
+    div[style*="maxWidth: 1600px"] {
+        flex-direction: column !important;
+        gap: 0 !important;
+        padding: 15px !important;
+    }
+
+    /*3-BOŞLUKLARI DÜZELTME*/
+    div[style*="marginBottom: 40px"],
+    div[style*="margin-bottom: 40px"] {
+        margin-bottom: 15px !important;
+    }
+
+    /*Navigasyon*/
+    nav {
+        padding: 0 0 20px 0 !important;
+        gap: 15px !important;
+    }
+
+    nav span {
+        font-size: 12px !important;
+        padding: 8px 15px !important;
+        background: #f5f5f5;
+        border-radius: 4px;
+    }
+
+    /*4-SIDEBAR FİLTRELER*/
+    aside {
+        width: 100% !important;
+        max-width: 100% !important;
+        border-right: none !important;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px !important;
+        margin-bottom: 20px !important;
+        background: transparent !important;
+    }
+
+    aside h3 {
+        font-size: 13px !important;
+        margin-bottom: 10px !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    aside ul {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    aside label {
+        font-size: 12px !important;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        color: #333;
+    }
+
+    /*5-SLIDER AYARLARI*/
+    .swiper {
+        height: 220px !important;
+        border-radius: 0 !important;
+    }
+
+    .swiper h2 {
+        font-size: 24px !important;
+        line-height: 1.2;
+    }
+
+    .swiper p {
+        font-size: 14px !important;
+    }
+
+    /*6-ÜRÜN KARTLARI*/
+    div[style*="display: grid"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    div[style*="height: 350px"] {
+        height: 200px !important;
+    }
+
+    /*7-FOOTER DÜZENİ*/
+    footer {
+        padding: 40px 20px !important;
+        text-align: center !important;
+    }
+
+    footer>div {
+        flex-direction: column !important;
+        gap: 40px !important;
+        align-items: center !important;
+    }
+
+    footer>div>div {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0 !important;
+    }
+
+    footer input {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin-bottom: 10px !important;
+    }
+
+    footer button {
+        width: 100% !important;
+    }
+
+    footer div[style*="display: flex"] {
+        justify-content: center !important;
+    }
+}
